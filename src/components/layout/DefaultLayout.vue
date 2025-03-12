@@ -4,9 +4,11 @@ import PageFooter from '@/components/layout/PageFooter.vue';
 </script>
 
 <template>
-  <PageHeader />
-  <main>
-    <router-view />
-  </main>
-  <PageFooter />
+  <div class="min-h-screen flex flex-col relative">
+    <PageHeader />
+    <main class="flex-grow">
+      <router-view />
+    </main>
+    <PageFooter />
+  </div>
 </template>

@@ -4,6 +4,9 @@ import PageFooter from '@/components/layout/PageFooter.vue';
 </script>
 
 <template>
-    <PageHeader />
-    <PageFooter />
+  <PageHeader />
+  <main>
+    <router-view />
+  </main>
+  <PageFooter />
 </template>

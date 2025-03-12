@@ -1,4 +1,6 @@
 <script setup>
+import ButtonComponent from '@/components/composables/ButtonComponent.vue';
+
 defineProps({
   id: Number,
   name: String,
@@ -24,9 +26,9 @@ const getImage = (imageName) => {
             <span class="text-gray-400 text-sm font-light">/day</span>
         </p>
       </div>
-      <div>
-        <button></button>
-        <button></button>
+      <div class="flex justify-between">
+        <ButtonComponent text="Book Now" />
+        <ButtonComponent text="Details" bgColor="bg-green-500" />
       </div>
     </div>
   </div>

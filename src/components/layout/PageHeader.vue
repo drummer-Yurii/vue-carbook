@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
   </header>
 </template>
 
-<style scoped>
+<style>
 nav a {
   color: white;
   transition: color 0.3s ease;

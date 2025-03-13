@@ -4,17 +4,17 @@ import 'swiper/swiper-bundle.css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/autoplay';
 import SectionHeading from '@/components/composables/SectionHeading.vue';
-import { testimony } from '@/data/testimonyData';
+import TestimonyCard from '@/components/cards/TestimonyCard.vue';
+import { testimonys } from '@/data/testimonyData';
 </script>
 
 <template>
   <div class="bg-gray-100/90">
     <SectionHeading title="Happy Clients" description="Testimonial" />
-    <section>
+    <section class="py-10 md:py-20 p-4">
       <swiper
         :modules="[Autoplay]"
         :space-between="30"
-        navigation
         loop
         :autoplay="{ delay: 3000, disableOnInteraction: false }"
         :breakpoints="{
@@ -23,10 +23,15 @@ import { testimony } from '@/data/testimonyData';
         }"
         class="w-full max-w-5xl"
       >
-        <swiiper-slide>
-            <TestimonyCard />
-        </swiiper-slide>    
-    </swiper>
+        <swiper-slide v-for="(testimony, index) in testimonys" :key="index">
+          <TestimonyCard
+            :name="testimony.name"
+            :position="testimony.position"
+            :image="testimony.image"
+            :comment="testimony.comment"
+          />
+        </swiper-slide>
+      </swiper>
     </section>
   </div>
 </template>

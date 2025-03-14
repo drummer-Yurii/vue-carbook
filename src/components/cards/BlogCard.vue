@@ -9,6 +9,7 @@ defineProps({
   date: String,
   image: String,
   description: String,
+  imageHeight: { type: String, default: 'h-56' },
 });
 
 const getImage = (imageName) => {
@@ -18,7 +19,11 @@ const getImage = (imageName) => {
 
 <template>
   <div>
-    <img :src="getImage(image)" alt="blog image" class="object-cover h-56 w-full" />
+    <img
+      :src="getImage(image)"
+      alt="blog image"
+      :class="['object-cover h-56 w-full', imageHeight]"
+    />
     <div class="space-y-2 pt-5">
       <p class="text-sm text-blue-500">{{ date }} {{ author }} {{ comments?.length }} comments</p>
       <h2 class="text-xl font-medium text-gray-800 mt-2">{{ title }}</h2>

@@ -6,6 +6,7 @@ import ServiceList from '@/components/homePage/ServiceList.vue';
 import CallToAction from '@/components/homePage/CallToAction.vue';
 import TestimonySection from '@/components/homePage/TestimonySection.vue';
 import BlogSection from '@/components/homePage/BlogSection.vue';
+import StatisticsSection from '@/components/homePage/StatisticsSection.vue';
 </script>
 
 <template>
@@ -16,4 +17,5 @@ import BlogSection from '@/components/homePage/BlogSection.vue';
   <CallToAction />
   <TestimonySection />
   <BlogSection />
+  <StatisticsSection />
 </template>

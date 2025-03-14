@@ -22,13 +22,17 @@ const getImage = (imageName) => {
       <div class="flex justify-between items-center">
         <p class="text-md text-gray-400">{{ brand }}</p>
         <p class="text-md text-blue-500 font-semibold">
-            {{ price }}
-            <span class="text-gray-400 text-sm font-light">/day</span>
+          {{ price }}
+          <span class="text-gray-400 text-sm font-light">/day</span>
         </p>
       </div>
       <div class="flex justify-between">
-        <ButtonComponent text="Book Now" />
-        <ButtonComponent text="Details" bgColor="bg-green-500" />
+        <router-link :to="`/pricing`">
+          <ButtonComponent text="Book Now" />
+        </router-link>
+        <router-link :to="`/car/${id}`">
+          <ButtonComponent text="Details" bgColor="bg-green-500" />
+        </router-link>
       </div>
     </div>
   </div>

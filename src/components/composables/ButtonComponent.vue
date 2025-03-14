@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <button
-    :class="`mt-4 px-4 py-3 rounded min-w-32 text-sm font-medium ${bgColor} ${textColor} hover:${hoverColor}`"
+    :class="`mt-4 px-4 py-3 rounded min-w-32 text-sm font-medium cursor-pointer ${bgColor} ${textColor} hover:${hoverColor}`"
     :style="{ width: width }"
   >
     {{ text }}

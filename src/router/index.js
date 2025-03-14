@@ -7,6 +7,7 @@ import CarsPage from '@/page/CarsPage.vue';
 import ContactPage from '@/page/ContactPage.vue';
 import BlogPage from '@/page/BlogPage.vue';
 import PricingPage from '@/page/PricingPage.vue';
+import CarDetails from '@/page/CarDetails.vue';
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
         path: '/cars',
         name: 'cars',
         component: CarsPage,
+      },
+      {
+        path: '/car/:id',
+        name: 'carDetails',
+        component: CarDetails,
       },
       {
         path: '/contact',

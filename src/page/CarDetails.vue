@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router';
 import BgContainer from '@/components/composables/BgContainer.vue';
 import EventCard from '@/components/carDetails/EventCard.vue';
 import TabsNavigation from '@/components/carDetails/TabsNavigation.vue';
+import SectionHeading from '@/components/composables/SectionHeading.vue';
+import CarCards from '@/components/cards/CarCards.vue';
 import { cars } from '@/data/carsData';
 import { events } from '@/data/carDetails';
 
@@ -32,7 +34,12 @@ onMounted(() => {
   <div class="flex justify-center p-4 py-10 md:py-20" v-if="car">
     <div class="w-full md:w-4/5">
       <div class="text-center">
-        <img v-if="car.image" :src="getImage(car.image)" alt="car image" class="w-full max-h-96 object-cover" />
+        <img
+          v-if="car.image"
+          :src="getImage(car.image)"
+          alt="car image"
+          class="w-full max-h-96 object-cover"
+        />
         <p class="text-sm md:text-lg text-gray-400 mt-2">{{ car.brand }}</p>
         <h1 class="text-xl md:text-3xl font-medium text-gray-700">{{ car.name }}</h1>
       </div>
@@ -40,6 +47,20 @@ onMounted(() => {
         <EventCard v-for="(event, index) in events" :key="index" :event="event" />
       </div>
       <TabsNavigation :cars="cars" />
+      <SectionHeading description="Choose Car" title="Related Cars" />
+      <div class="my-20 flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <CarCards
+            v-for="(car, index) in cars.slice(0, 3)"
+            :key="index"
+            :id="car.id"
+            :name="car.name"
+            :brand="car.brand"
+            :price="car.price"
+            :image="car.image"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -6,6 +6,7 @@ import ServicesPage from '@/page/ServicesPage.vue';
 import CarsPage from '@/page/CarsPage.vue';
 import ContactPage from '@/page/ContactPage.vue';
 import BlogPage from '@/page/BlogPage.vue';
+import BlogDetails from '@/page/BlogDetails.vue';
 import PricingPage from '@/page/PricingPage.vue';
 import CarDetails from '@/page/CarDetails.vue';
 
@@ -48,6 +49,11 @@ const routes = [
         path: '/blog',
         name: 'blog',
         component: BlogPage,
+      },
+      {
+        path: '/blog/:id',
+        name: 'blogDetail',
+        component: BlogDetails,
       },
       {
         path: '/pricing',

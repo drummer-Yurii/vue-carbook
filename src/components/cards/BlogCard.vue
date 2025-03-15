@@ -27,7 +27,9 @@ const getImage = (imageName) => {
     <div class="space-y-2 pt-5">
       <p class="text-sm text-blue-500">{{ date }} {{ author }} {{ comments?.length }} comments</p>
       <h2 class="text-xl font-medium text-gray-800 mt-2">{{ title }}</h2>
-      <ButtonComponent text="Read More" />
+      <router-link :to="`/blog/${id}`">
+        <ButtonComponent text="Read More" />
+      </router-link>
     </div>
   </div>
 </template>
